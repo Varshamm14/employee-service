@@ -1,0 +1,45 @@
+{
+  "name": "employee-service-cds",
+  "version": "1.0.0",
+  "description": "Employee Service CAP Project with HANA",
+  "license": "ISC",
+  "repository": "<Add your repository here>",
+  "dependencies": {
+    "@sap/cds": "^8",
+    "express": "^4",
+    "@sap/hana-client": "^2.20.0"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^9.5.0",
+    "@cap-js/sqlite": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "build": "cds build --production"
+  },
+  "cds": {
+    "requires": {
+      "auth": "dummy",
+      "db": {
+        "kind": "sql"
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana-cloud"
+        }
+      }
+    },
+    "sql": {
+      "native_hana_associations": false
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  },
+  "sapux": [
+    "app/employee",
+    "app/employee",
+    "app/employee"
+  ]
+}
