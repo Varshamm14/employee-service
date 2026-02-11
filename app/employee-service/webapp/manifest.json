@@ -1,7 +1,7 @@
 {
   "_version": "1.81.0",
   "sap.app": {
-    "id": "emp.employee",
+    "id": "emp.employeeservice",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.20.2",
-      "toolsId": "408df9df-9fd6-4153-a4dd-90fbbfc39b5b"
+      "toolsId": "c5148e06-be6a-4601-a93a-4b6ac18c947b"
     },
     "dataSources": {
       "mainService": {
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "emp.employee.i18n.i18n"
+          "bundleName": "emp.employeeservice.i18n.i18n"
         }
       },
       "": {
@@ -92,6 +92,11 @@
           "pattern": "Employees({key}):?query:",
           "name": "EmployeesObjectPage",
           "target": "EmployeesObjectPage"
+        },
+        {
+          "pattern": "Employees({key})/products({key2}):?query:",
+          "name": "ProductsObjectPage",
+          "target": "ProductsObjectPage"
         }
       ],
       "targets": {
@@ -127,7 +132,25 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Employees"
+              "contextPath": "/Employees",
+              "navigation": {
+                "products": {
+                  "detail": {
+                    "route": "ProductsObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ProductsObjectPage": {
+          "type": "Component",
+          "id": "ProductsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Employees/products"
             }
           }
         }

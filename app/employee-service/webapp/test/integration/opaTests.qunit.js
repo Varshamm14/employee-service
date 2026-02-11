@@ -5,7 +5,7 @@ sap.ui.loader.config({
         },
         "sap/ui/qunit/qunit-coverage": {
             deps: ["sap/ui/thirdparty/qunit-2"]
-        },
+        },z
         "sap/ui/thirdparty/sinon-qunit": {
             deps: ["sap/ui/thirdparty/qunit-2", "sap/ui/thirdparty/sinon"]
         },
@@ -22,7 +22,7 @@ sap.ui.require(
     "sap/ui/thirdparty/qunit-2",
     "sap/ui/qunit/qunit-junit",
     "sap/ui/qunit/qunit-coverage",
-    'emp/employee/test/integration/FirstJourney'
+    'emp/employeeservice/test/integration/FirstJourney'
   ], function (QUnit) {
     "use strict";
     QUnit.start();

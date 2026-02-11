@@ -32,10 +32,10 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.sap.cds</groupId>
 			<artifactId>cds-starter-cloudfoundry</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.sap.cloud.db.jdbc</groupId>

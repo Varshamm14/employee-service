@@ -2,14 +2,28 @@ spring:
   profiles:
     active: default
   datasource:
-    url: jdbc:sap://your-hana-host:443?encrypt=true&validateCertificate=false
-    # username: Varsh
-    # password: 1234
+    url: jdbc:sap://a9e4d7de-4838-4b75-ac86-194b4f13f5e1.hna1.prod-us10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true&currentschema=FDB76B0B47EB4266BEC52C107BBF0AF4
+    username: FDB76B0B47EB4266BEC52C107BBF0AF4_AL3EL1LELVSER3ACKSMDE7PMS_RT
+    password: '?:V:SO+R;2X5%jrT2P+S`gu::E#WXafFa6-.<yv+Iy6_)<hP1#E~R-~4+T| YdU[tcG4S3,<6JA#j2,En=#?hI6m36;3-KF/?Enz UN-IT&[?Kg|IhlDeFb^d_x6fT<r'
     driver-class-name: com.sap.db.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
 
 cds:
   datasource:
     auto-config:
       enabled: true
+
+  security:
+    authentication:
+      mode: basic
+      users:
+        admin:
+          password: admin
+          roles:
+            - ADMIN
+
   sql:
     supportedLocales: en
